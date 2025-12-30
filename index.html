@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrownexAI - Automate Your Revenue with AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'DM Sans', "DM Sans Placeholder", sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      margin: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    .headline-style {
+      font-family: 'DM Sans', "DM Sans Placeholder", sans-serif;
+      letter-spacing: 0em;
+    }
+
+    .satoshi-headline {
+      font-family: "Satoshi", "Satoshi Placeholder", sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1em;
+      text-align: center;
+    }
+
+    .logo-font {
+      font-family: 'Michroma', sans-serif;
+    }
+
+    /* Orbital Ring Keyframes */
+    @keyframes rotate-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotate-reverse {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes pulse-slow {
+
+      0%,
+      100% {
+        opacity: 0.15;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.25;
+        transform: scale(1.05);
+      }
+    }
+
+    .animate-rotate-slow {
+      animation: rotate-slow 40s linear infinite;
+    }
+
+    .animate-rotate-reverse {
+      animation: rotate-reverse 35s linear infinite;
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 8s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .animate-rotate-slow,
+      .animate-rotate-reverse,
+      .animate-pulse-slow {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        animation: none !important;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
