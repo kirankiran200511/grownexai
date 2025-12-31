@@ -11,9 +11,9 @@ const AIChatInsights: React.FC = () => {
     if (!query.trim()) return;
     setLoading(true);
     setResponse('');
-    
+
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
       const result = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: query,
@@ -39,17 +39,17 @@ const AIChatInsights: React.FC = () => {
             <p className="text-gray-400 mb-8">
               Ask how automation can specifically solve your business bottlenecks or improve your conversion rates.
             </p>
-            
+
             <div className="space-y-4">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="e.g., How can I automate my lead follow-ups?"
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-lg text-white focus:outline-none focus:border-emerald-500 transition-colors"
                 onKeyDown={(e) => e.key === 'Enter' && getInsights()}
               />
-              <button 
+              <button
                 onClick={getInsights}
                 disabled={loading}
                 className="w-full bg-emerald-500 text-black font-bold py-5 rounded-2xl text-lg hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
