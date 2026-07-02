@@ -27,7 +27,7 @@ const Header: React.FC = () => {
           </nav>
 
           <a
-            href="https://cal.com/kiran-grownexai/30min"
+            href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black font-bold py-2.5 px-6 rounded-lg text-[15px] transition-all shadow-lg shadow-emerald-500/20 active:scale-95 inline-block"
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             </nav>
 
             <a
-              href="https://cal.com/kiran-grownexai/30min"
+              href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full max-w-xs bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-bold py-3 px-6 rounded-lg text-lg shadow-lg shadow-emerald-500/20 active:scale-95 block text-center"

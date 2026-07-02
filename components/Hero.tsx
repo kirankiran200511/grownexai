@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           className={`flex flex-col sm:flex-row justify-center gap-4 mb-20 transition-all duration-700 delay-300 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
           <a
-            href="https://cal.com/kiran-grownexai/30min"
+            href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#00ffa3] hover:bg-[#00e692] text-black px-10 py-5 rounded-full font-bold text-[18px] flex items-center justify-center gap-3 transition-all hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_40px_rgba(0,255,163,0.5)]"

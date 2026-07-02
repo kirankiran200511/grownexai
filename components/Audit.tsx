@@ -151,9 +151,8 @@ const Audit: React.FC = () => {
             <img src="/assets/grownexai_text.png" alt="GrownexAI" className="h-8 md:h-10 object-contain" />
           </Link>
           <div className="flex items-center gap-6">
-            <Link to="/" className="text-gray-400 text-[15px] font-medium hover:text-emerald-400 transition-colors hidden md:block">← Back to Home</Link>
             <a
-              href="https://cal.com/kiran-grownexai/30min"
+              href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black font-bold py-2.5 px-6 rounded-lg text-[15px] transition-all shadow-lg shadow-emerald-500/20 active:scale-95"
@@ -433,7 +432,7 @@ const Audit: React.FC = () => {
 
                   {/* CTA */}
                   <a
-                    href="https://cal.com/kiran-grownexai/30min"
+                    href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full text-center py-4 px-6 rounded-xl bg-[#00ffa3] hover:bg-[#00e692] text-black font-bold text-base transition-all hover:scale-[1.01] active:scale-[0.99] shadow-[0_0_40px_rgba(0,255,163,0.3)]"
@@ -554,7 +553,7 @@ const Audit: React.FC = () => {
                   The audit is free. The math is transparent. The number might sting.
                 </p>
                 <a
-                  href="https://cal.com/kiran-grownexai/30min"
+                  href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#00ffa3] hover:bg-[#00e692] text-black font-bold text-lg px-10 py-5 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,255,163,0.5)] transition-all transform hover:-translate-y-1 active:translate-y-0 inline-block"

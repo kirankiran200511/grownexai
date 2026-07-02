@@ -61,7 +61,7 @@ const CallToAction: React.FC = () => {
 
             <div className="flex justify-center">
               <a
-                href="https://cal.com/kiran-grownexai/30min"
+                href="https://cal.com/kiran-kumar-book/ai-systems-consultation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#00ffa3] hover:bg-[#00e692] text-black font-bold text-lg px-10 py-5 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,255,163,0.5)] transition-all transform hover:-translate-y-1 active:translate-y-0 group-hover:scale-[1.02] inline-block"
