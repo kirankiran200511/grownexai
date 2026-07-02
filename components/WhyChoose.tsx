@@ -35,20 +35,19 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
   }, []);
 
   return (
-    <div 
+    <div
       ref={cardRef}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`flex flex-col items-start p-8 md:p-10 border border-white/5 bg-black/20 backdrop-blur-md transition-all duration-600 ease-out rounded-3xl group ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      } hover:bg-white/[0.04] hover:border-emerald-500/20`}
+      className={`flex flex-col items-start p-6 md:p-10 border border-white/5 bg-black/20 backdrop-blur-md transition-all duration-600 ease-out rounded-xl md:rounded-3xl group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        } hover:bg-white/[0.04] hover:border-emerald-500/20`}
     >
-      <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 bg-white/[0.02] group-hover:border-emerald-500/50 group-hover:bg-emerald-500/5 transition-all">
-        <div className="text-white opacity-80 group-hover:text-emerald-400 group-hover:opacity-100 transition-all">
+      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center mb-6 md:mb-8 bg-white/[0.02] group-hover:border-emerald-500/50 group-hover:bg-emerald-500/5 transition-all">
+        <div className="text-white opacity-80 group-hover:text-emerald-400 group-hover:opacity-100 transition-all scale-90 md:scale-100">
           {icon}
         </div>
       </div>
-      <h3 className="text-xl font-bold mb-4 text-white tracking-tight headline-style">{title}</h3>
-      <p className="text-[#949494] leading-relaxed text-[15px] font-normal tracking-tight">
+      <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white tracking-tight headline-style">{title}</h3>
+      <p className="text-[#949494] leading-relaxed text-[14px] md:text-[15px] font-normal tracking-tight">
         {description}
       </p>
     </div>
@@ -80,22 +79,21 @@ const WhyChoose: React.FC = () => {
   }, []);
 
   return (
-    <section id="why-choose-us" className="py-32 border-t border-white/5 bg-transparent">
-      <div className="max-w-[1400px] mx-auto px-6">
-        <div 
+    <section id="why-choose-us" className="py-20 md:py-32 border-t border-white/5 bg-transparent">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6">
+        <div
           ref={headerRef}
-          className={`text-center mb-24 transition-all duration-600 ease-out ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`text-center mb-12 md:mb-24 transition-all duration-600 ease-out ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 headline-style uppercase text-white">WHY CHOOSE US?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 headline-style uppercase text-white">WHY CHOOSE US?</h2>
           <p className="text-[#949494] text-lg max-w-2xl mx-auto font-medium opacity-80 tracking-tight">
             Custom AI automation that works for your business—not the other way around.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <FeatureCard 
+          <FeatureCard
             delay={0}
             title="Proven ROI"
             description="Our clients see measurable results within 30 days: more leads captured, faster response times, and increased conversion rates that directly impact your bottom line."
@@ -105,7 +103,7 @@ const WhyChoose: React.FC = () => {
               </svg>
             }
           />
-          <FeatureCard 
+          <FeatureCard
             delay={100}
             title="Full Transparency"
             description="Track every interaction, measure every metric. You'll always know exactly how your AI systems are performing and where revenue is coming from."
@@ -116,7 +114,7 @@ const WhyChoose: React.FC = () => {
               </svg>
             }
           />
-          <FeatureCard 
+          <FeatureCard
             delay={200}
             title="Expert Implementation"
             description="We don't just build and leave. Our team handles the entire process—from analysis to deployment to ongoing optimization—so you can focus on running your business."
@@ -126,7 +124,7 @@ const WhyChoose: React.FC = () => {
               </svg>
             }
           />
-          <FeatureCard 
+          <FeatureCard
             delay={300}
             title="Zero Learning Curve"
             description="Your customers interact naturally with our AI systems without realizing they're talking to automation. For your team, everything just works—no complex training required."

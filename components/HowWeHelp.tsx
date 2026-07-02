@@ -38,18 +38,17 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ side, stepNumber, title, su
   }, []);
 
   return (
-    <div 
+    <div
       ref={stepRef}
-      className="timeline-step relative flex items-center justify-center w-full mb-24 last:mb-12"
+      className="timeline-step relative flex items-center justify-center w-full mb-12 md:mb-24 last:mb-12"
     >
-      {/* Central Connector Dot and Badge */}
-      <div className={`absolute left-1/2 -translate-x-1/2 z-20 flex flex-col items-center transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
-        <div 
-          className={`step-dot w-4 h-4 rounded-full border-2 border-[#1a1a1a] transition-all duration-700 ${
-            isVisible 
-              ? 'bg-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.9)]' 
-              : 'bg-[#333]'
-          }`}
+      {/* Central Connector Dot and Badge (Desktop Only) */}
+      <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 z-20 flex-col items-center transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+        <div
+          className={`step-dot w-4 h-4 rounded-full border-2 border-[#1a1a1a] transition-all duration-700 ${isVisible
+            ? 'bg-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.9)]'
+            : 'bg-[#333]'
+            }`}
           data-step={stepNumber}
         />
         <div className={`absolute ${side === 'left' ? 'left-10' : 'right-10'} top-1/2 -translate-y-1/2 whitespace-nowrap`}>
@@ -59,12 +58,20 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ side, stepNumber, title, su
         </div>
       </div>
 
-      <div className="flex w-full max-w-6xl mx-auto px-6">
-        <div className="flex-1 pr-16 text-right flex justify-end">
-          {side === 'left' && (
-            <div className={`max-w-md w-full bg-black/30 backdrop-blur-lg border border-white/5 p-8 rounded-[24px] text-left hover:border-white/20 hover:bg-white/[0.02] transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div 
-                className="w-10 h-10 rounded-lg bg-emerald-900/20 flex items-center justify-center mb-6 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 group-hover:border-emerald-500/40 transition-all duration-500"
+      <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto px-4 md:px-6">
+        {/* Mobile Step Badge */}
+        <div className="md:hidden flex justify-center mb-4">
+          <span className="bg-emerald-900/30 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-500/20">
+            Step {stepNumber}
+          </span>
+        </div>
+
+        {/* Left Side (or Full Width Mobile) */}
+        <div className={`flex-1 md:pr-16 flex justify-center md:justify-end ${side === 'right' ? 'md:hidden' : ''}`}>
+          {(side === 'left' || true) && (
+            <div className={`w-full md:max-w-md bg-black/30 backdrop-blur-lg border border-white/5 p-6 md:p-8 rounded-[20px] md:rounded-[24px] text-left hover:border-white/20 hover:bg-white/[0.02] transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-emerald-900/20 flex items-center justify-center mb-4 md:mb-6 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 group-hover:border-emerald-500/40 transition-all duration-500"
               >
                 {icon}
               </div>
@@ -83,12 +90,14 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ side, stepNumber, title, su
           )}
         </div>
 
-        <div className="w-px" />
+        {/* Spacer for Desktop Grid */}
+        <div className="hidden md:block w-px" />
 
-        <div className="flex-1 pl-16 text-left flex justify-start">
-          {side === 'right' && (
+        {/* Right Side (Desktop Only) */}
+        <div className={`hidden md:flex flex-1 pl-16 justify-start ${side === 'left' ? 'invisible' : ''}`}>
+          {(side === 'right') && (
             <div className={`max-w-md w-full bg-black/30 backdrop-blur-lg border border-white/5 p-8 rounded-[24px] text-left hover:border-white/20 hover:bg-white/[0.02] transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div 
+              <div
                 className="w-10 h-10 rounded-lg bg-emerald-900/20 flex items-center justify-center mb-6 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 group-hover:border-emerald-500/40 transition-all duration-500"
               >
                 {icon}
@@ -146,24 +155,24 @@ const HowWeHelp: React.FC = () => {
       const timeline = timelineRef.current;
       const section = sectionRef.current;
       const steps = section.querySelectorAll('.timeline-step');
-      
+
       if (steps.length === 0) return;
-      
+
       const timelineRect = timeline.getBoundingClientRect();
       const timelineTop = timelineRect.top + window.scrollY;
       const timelineHeight = timeline.offsetHeight;
       const viewportHeight = window.innerHeight;
-      
+
       let targetProgress = 0;
       let maxProgress = 0;
-      
+
       steps.forEach((step) => {
         const stepRect = step.getBoundingClientRect();
         const stepTop = stepRect.top + window.scrollY;
         const stepPositionOnTimeline = (stepTop - timelineTop) / timelineHeight;
         maxProgress = Math.max(maxProgress, stepPositionOnTimeline);
       });
-      
+
       steps.forEach((step) => {
         const stepRect = step.getBoundingClientRect();
         const stepTop = stepRect.top + window.scrollY;
@@ -173,23 +182,22 @@ const HowWeHelp: React.FC = () => {
           targetProgress = Math.max(targetProgress, Math.min(stepPositionOnTimeline, maxProgress));
         }
       });
-      
+
       setScrollProgress(targetProgress);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <section id="how-it-works" ref={sectionRef} className="py-32 pb-48 bg-transparent relative overflow-hidden">
-      <div 
+      <div
         ref={headerRef}
-        className={`max-w-4xl mx-auto text-center mb-32 z-10 relative transition-all duration-600 ease-out ${
-          headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className={`max-w-4xl mx-auto text-center mb-32 z-10 relative transition-all duration-600 ease-out ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
       >
         <h2 className="satoshi-headline text-white uppercase tracking-tight">
           How We Help You?
@@ -197,18 +205,18 @@ const HowWeHelp: React.FC = () => {
       </div>
 
       <div className="relative max-w-[1400px] mx-auto">
-        <div ref={timelineRef} className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 z-10">
+        <div ref={timelineRef} className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 z-10">
           <div className="absolute top-0 left-0 w-full h-full bg-white/5" />
-          <div 
+          <div
             className="absolute top-0 left-0 w-full bg-emerald-500 transition-all duration-500 ease-out"
-            style={{ 
+            style={{
               height: `${scrollProgress * 100}%`,
               boxShadow: '0 0 10px rgba(16, 185, 129, 0.5)'
             }}
           />
         </div>
 
-        <TimelineStep 
+        <TimelineStep
           side="left"
           stepNumber="1"
           isFirst={true}
@@ -221,7 +229,7 @@ const HowWeHelp: React.FC = () => {
           }
         />
 
-        <TimelineStep 
+        <TimelineStep
           side="right"
           stepNumber="2"
           title="Build and Implement Custom AI Systems"
@@ -234,7 +242,7 @@ const HowWeHelp: React.FC = () => {
           }
         />
 
-        <TimelineStep 
+        <TimelineStep
           side="left"
           stepNumber="3"
           title="Monitor Performance & Fine-Tune Continuously"

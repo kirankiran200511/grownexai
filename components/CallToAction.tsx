@@ -29,19 +29,18 @@ const CallToAction: React.FC = () => {
 
   return (
     <section className="py-24 px-6 bg-transparent">
-      <div 
+      <div
         ref={sectionRef}
-        className={`max-w-[1200px] mx-auto relative group transition-all duration-600 ease-out ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-        }`}
+        className={`max-w-[1200px] mx-auto relative group transition-all duration-600 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}
       >
         {/* Main CTA Card with Emerald Gradient */}
         <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#064e3b]/80 via-[#022c22]/90 to-[#030405]/95 backdrop-blur-sm border border-white/5 p-12 md:p-24 text-center">
-          
+
           {/* Subtle Grid Pattern Overlay (Emerald) */}
-          <div 
-            className="absolute inset-0 opacity-[0.12] pointer-events-none" 
-            style={{ 
+          <div
+            className="absolute inset-0 opacity-[0.12] pointer-events-none"
+            style={{
               backgroundImage: `linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)`,
               backgroundSize: '40px 40px'
             }}
@@ -55,15 +54,20 @@ const CallToAction: React.FC = () => {
             <h2 className="text-[32px] md:text-[56px] font-bold text-white mb-6 leading-tight tracking-tight">
               Ready to Automate Your Revenue?
             </h2>
-            
+
             <p className="text-[#a5a5a5] text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
               Stop letting leads slip through the cracks. Your custom AI system is ready to be built.
             </p>
 
             <div className="flex justify-center">
-              <button className="bg-[#00ffa3] hover:bg-[#00e692] text-black font-bold text-lg px-10 py-5 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,255,163,0.5)] transition-all transform hover:-translate-y-1 active:translate-y-0 group-hover:scale-[1.02]">
+              <a
+                href="https://cal.com/kiran-grownexai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#00ffa3] hover:bg-[#00e692] text-black font-bold text-lg px-10 py-5 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,255,163,0.5)] transition-all transform hover:-translate-y-1 active:translate-y-0 group-hover:scale-[1.02] inline-block"
+              >
                 Book a strategy call
-              </button>
+              </a>
             </div>
           </div>
         </div>
